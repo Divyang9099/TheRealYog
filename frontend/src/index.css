@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Deep Forest Green - Represents nature */
+  --color-forest-900: #0a1f11;
+  --color-forest-800: #12331d;
+  --color-forest-700: #1a4a2a;
+  --color-forest-600: #236338;
+  --color-forest: #2b7a45; /* Base Deep Forest Green */
+  --color-forest-500: #2b7a45;
+  --color-forest-400: #429c5e;
+  --color-forest-300: #6ab781;
+  --color-forest-200: #9dd1ac;
+  --color-forest-100: #d1ead7;
+  --color-forest-50: #eef7f1;
+
+  /* Soft Sand - Represents peace */
+  --color-sand-900: #4a433a;
+  --color-sand-800: #6e6457;
+  --color-sand-700: #918474;
+  --color-sand-600: #b5a693;
+  --color-sand: #f5f0e6; /* Base Soft Sand */
+  --color-sand-500: #cbbba6;
+  --color-sand-400: #d6cab8;
+  --color-sand-300: #e2d9cb;
+  --color-sand-200: #eee8df;
+  --color-sand-100: #f5f0e6;
+  --color-sand-50: #fbfaf8;
+
+  /* Aliases */
+  --color-primary: var(--color-forest);
+  --color-secondary: var(--color-sand);
+
+  /* Typography */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  /* Animations */
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+/* Base styles for a clean natural look */
+@layer base {
+  body {
+    @apply bg-sand-100 text-forest-900 font-sans antialiased;
+  }
+}
