@@ -317,7 +317,7 @@ const Navbar = () => {
               >
                 {/* WhatsApp */}
                 <a
-                  href="https://wa.me/919898989898"
+                  href="https://wa.me/919099210660"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-center w-9 h-9 rounded-full bg-white/8 text-white/50 hover:bg-green-600/40 hover:text-white transition-all"
@@ -329,7 +329,7 @@ const Navbar = () => {
                 </a>
                 {/* Instagram */}
                 <a
-                  href="https://instagram.com/therealyoga"
+                  href="https://instagram.com/therealyog.in"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-center w-9 h-9 rounded-full bg-white/8 text-white/50 hover:bg-pink-600/40 hover:text-white transition-all"
@@ -343,7 +343,7 @@ const Navbar = () => {
                 </a>
                 {/* YouTube */}
                 <a
-                  href="https://youtube.com/@therealyoga"
+                  href="https://www.youtube.com/@TheRealYog/videos"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-center w-9 h-9 rounded-full bg-white/8 text-white/50 hover:bg-red-600/40 hover:text-white transition-all"
