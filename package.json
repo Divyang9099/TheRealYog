@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "cloudinary": "^2.10.0",
+    "glob": "^13.0.6"
+  }
+}

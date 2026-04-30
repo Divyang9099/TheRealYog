@@ -40,7 +40,7 @@ const ContactForm = () => {
           {/* Left Side: Image */}
           <div className="w-full lg:w-5/12 relative min-h-[400px] lg:min-h-full">
             <img 
-              src="/mansukh-padmasana.png" 
+              src="https://res.cloudinary.com/dhowmzdkh/image/upload/v1777523432/mansukh-padmasana.jpg" 
               alt="Mansukhbhai Gujarati Yoga Coach performing Padmasana (Lotus Pose)" 
               className="absolute inset-0 w-full h-full object-cover"
             />

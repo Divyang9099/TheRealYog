@@ -12,7 +12,12 @@ import ContactForm from './components/ContactForm';
 import AdminDashboard from './components/AdminDashboard';
 import SocialFloat from './components/SocialFloat';
 
-// The main public facing website
+// Detail pages
+import BiographyPage    from './pages/BiographyPage';
+import SkillDetailPage  from './pages/SkillDetailPage';
+import ProgramDetailPage from './pages/ProgramDetailPage';
+
+// The main public-facing landing page
 const LandingPage = () => (
   <>
     <Navbar />
@@ -30,11 +35,23 @@ const LandingPage = () => (
 function App() {
   return (
     <div className="bg-sand-100 min-h-screen">
-      {/* Global sticky social buttons - visible on all pages */}
+      {/* Global sticky social buttons — visible on all pages */}
       <SocialFloat />
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/admin" element={<AdminDashboard />} />
+        {/* Landing page */}
+        <Route path="/"              element={<LandingPage />} />
+
+        {/* Biography */}
+        <Route path="/biography"     element={<BiographyPage />} />
+
+        {/* Skills / Disciplines */}
+        <Route path="/skill/:slug"   element={<SkillDetailPage />} />
+
+        {/* Programs */}
+        <Route path="/program/:slug" element={<ProgramDetailPage />} />
+
+        {/* Admin */}
+        <Route path="/admin"         element={<AdminDashboard />} />
       </Routes>
     </div>
   );

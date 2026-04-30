@@ -1,52 +1,181 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  /* Deep Forest Green - Represents nature */
+  /* ── Deep Forest Green ── */
   --color-forest-900: #0a1f11;
   --color-forest-800: #12331d;
   --color-forest-700: #1a4a2a;
   --color-forest-600: #236338;
-  --color-forest: #2b7a45; /* Base Deep Forest Green */
+  --color-forest:     #2b7a45;
   --color-forest-500: #2b7a45;
   --color-forest-400: #429c5e;
   --color-forest-300: #6ab781;
   --color-forest-200: #9dd1ac;
   --color-forest-100: #d1ead7;
-  --color-forest-50: #eef7f1;
+  --color-forest-50:  #eef7f1;
 
-  /* Soft Sand - Represents peace */
+  /* ── Soft Sand ── */
   --color-sand-900: #4a433a;
   --color-sand-800: #6e6457;
   --color-sand-700: #918474;
   --color-sand-600: #b5a693;
-  --color-sand: #f5f0e6; /* Base Soft Sand */
+  --color-sand:     #f5f0e6;
   --color-sand-500: #cbbba6;
   --color-sand-400: #d6cab8;
   --color-sand-300: #e2d9cb;
   --color-sand-200: #eee8df;
   --color-sand-100: #f5f0e6;
-  --color-sand-50: #fbfaf8;
+  --color-sand-50:  #fbfaf8;
 
-  /* Aliases */
-  --color-primary: var(--color-forest);
+  /* ── Aliases ── */
+  --color-primary:   var(--color-forest);
   --color-secondary: var(--color-sand);
 
-  /* Typography */
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  /* ── Typography — Space Grotesk globally ── */
+  --font-sans: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
 
-  /* Animations */
+  /* ── Animations ── */
   --animate-marquee: marquee 30s linear infinite;
 
   @keyframes marquee {
-    0% { transform: translateX(0); }
+    0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
 }
 
-/* Base styles for a clean natural look */
+/* ══════════════════════════════════════════════════════
+   BASE LAYER — Global typography & resets
+══════════════════════════════════════════════════════ */
 @layer base {
-  body {
-    @apply bg-sand-100 text-forest-900 font-sans antialiased;
+  html {
+    font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
+
+  body {
+    @apply bg-sand-100 text-forest-900 antialiased;
+    font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    font-weight: 400;
+    opacity: 1; /* full opacity always */
+  }
+
+  /* ── Headings — bold, Space Grotesk, full opacity ── */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    font-weight: 700;        /* Bold */
+    letter-spacing: -0.02em;
+    opacity: 1;
+    color: inherit;
+  }
+
+  /* ── Double-bold display headings (section titles) ── */
+  h1 { font-weight: 700; font-size: clamp(2rem, 6vw, 4rem); }
+  h2 { font-weight: 700; }
+  h3 { font-weight: 700; }
+  h4 { font-weight: 600; }
+  h5 { font-weight: 600; }
+
+  /* ── Body copy — crisp and readable ── */
+  p, li, span, label, input, textarea, button {
+    font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    opacity: 1;
+  }
+
+  /* ── Links ── */
+  a {
+    font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    opacity: 1;
+  }
+
+  /* ── Strong / b — always full opacity & bold ── */
+  strong, b {
+    font-weight: 700;
+    opacity: 1;
+  }
+}
+
+/* ══════════════════════════════════════════════════════
+   COMPONENT LAYER — Reusable utility classes
+══════════════════════════════════════════════════════ */
+@layer components {
+
+  /* ── Material Symbols helper class ─────────────── */
+  .icon {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.25rem;     /* default icon size */
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    opacity: 1;
+    vertical-align: middle;
+    user-select: none;
+  }
+
+  /* Icon size variants */
+  .icon-sm  { font-size: 1rem; }
+  .icon-md  { font-size: 1.5rem; }
+  .icon-lg  { font-size: 2rem; }
+  .icon-xl  { font-size: 2.5rem; }
+
+  /* ── Section label — small BOLD caps ───────────── */
+  .section-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 1;
+  }
+
+  /* ── Display heading — very bold, big ──────────── */
+  .display-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    opacity: 1;
+  }
+
+  /* ── Bold badge label ───────────────────────────── */
+  .badge-bold {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    opacity: 1;
+  }
+
+  /* ── Button — full opacity, bold text ──────────── */
+  .btn-primary {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    opacity: 1;
+  }
+}
+
+/* ══════════════════════════════════════════════════════
+   UTILITY OVERRIDES — ensure no half-opacity on text
+══════════════════════════════════════════════════════ */
+@layer utilities {
+  /* Force full opacity anywhere it might be reduced */
+  .text-opacity-full { opacity: 1 !important; }
+
+  /* Space Grotesk weight helpers */
+  .font-grotesk-light   { font-family: 'Space Grotesk', sans-serif; font-weight: 300; }
+  .font-grotesk         { font-family: 'Space Grotesk', sans-serif; font-weight: 400; }
+  .font-grotesk-medium  { font-family: 'Space Grotesk', sans-serif; font-weight: 500; }
+  .font-grotesk-semi    { font-family: 'Space Grotesk', sans-serif; font-weight: 600; }
+  .font-grotesk-bold    { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
 }

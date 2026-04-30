@@ -1,24 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const About = () => {
   return (
-    <section className="py-20 md:py-32 bg-white overflow-hidden" id="about">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+    <section className="py-14 md:py-32 bg-white overflow-hidden" id="about">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           
           {/* Left Side: Text Content */}
           <div className="w-full lg:w-1/2 space-y-8">
             <div className="space-y-4">
-              <h2 className="text-sm font-bold text-forest-500 uppercase tracking-widest">
+              <h2 className="text-xs md:text-sm font-bold text-forest-500 uppercase tracking-widest">
                 The Master's Journey
               </h2>
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-forest-900 leading-tight">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-forest-900 leading-tight">
                 A Legacy of Wellness Since 1998
               </h3>
             </div>
             
-            <p className="text-lg text-sand-800 leading-relaxed">
+            <p className="text-base md:text-lg text-sand-800 leading-relaxed">
               For over two decades, our master has been a guiding light in the realm of holistic health and spiritual well-being. Beginning his teaching journey in 1998, he has cultivated an environment of peace, discipline, and profound transformation for thousands of students.
             </p>
             
@@ -50,9 +51,12 @@ const About = () => {
             </div>
             
             <div className="pt-6">
-              <button className="px-8 py-3 bg-white text-forest-900 font-semibold rounded-full border-2 border-forest-900 hover:bg-forest-900 hover:text-white transition-colors duration-300 shadow-sm hover:shadow-md">
+              <Link
+                to="/biography"
+                className="inline-block px-8 py-3 bg-white text-forest-900 font-semibold rounded-full border-2 border-forest-900 hover:bg-forest-900 hover:text-white transition-colors duration-300 shadow-sm hover:shadow-md"
+              >
                 Read Full Biography
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -63,19 +67,19 @@ const About = () => {
             <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-forest-100 rounded-full -z-10 blur-3xl opacity-60"></div>
             
             <img 
-              src="/uncle-headshot.png" 
+              src="https://res.cloudinary.com/dhowmzdkh/image/upload/v1777523430/uncle-headshot.jpg" 
               alt="Mansukhbhai Gujarati Yoga Coach Professional Headshot" 
               className="w-full h-auto object-cover rounded-3xl shadow-xl border border-sand-200"
             />
             
             {/* Floating badge */}
-            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl flex items-center gap-4">
-              <div className="w-12 h-12 bg-forest-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
+            <div className="absolute -bottom-4 -left-2 md:-bottom-6 md:-left-6 bg-white p-3 md:p-6 rounded-xl md:rounded-2xl shadow-xl flex items-center gap-2 md:gap-4">
+              <div className="w-9 h-9 md:w-12 md:h-12 bg-forest-600 text-white rounded-full flex items-center justify-center font-bold text-sm md:text-xl">
                 20+
               </div>
               <div>
-                <p className="font-bold text-forest-900 leading-tight">Years of</p>
-                <p className="text-sand-700 text-sm">Experience</p>
+                <p className="font-bold text-forest-900 leading-tight text-sm md:text-base">Years of</p>
+                <p className="text-sand-700 text-xs md:text-sm">Experience</p>
               </div>
             </div>
           </div>
