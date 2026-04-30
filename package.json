@@ -1,11 +1,16 @@
 {
   "name": "therealyoga-root",
   "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "scripts": {
-    "dev": "cd backend && npm run dev",
-    "start": "cd backend && npm start",
-    "build": "cd frontend && npm install && npm run build",
-    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install"
+    "dev": "npm run dev --workspace=backend",
+    "start": "npm run start --workspace=backend",
+    "build": "npm run build --workspace=frontend",
+    "install-all": "npm install"
   },
   "dependencies": {
     "cloudinary": "^2.10.0",
