@@ -15,7 +15,8 @@ const AdminDashboard = () => {
     setError('');
     
     try {
-      const response = await axios.get('http://localhost:5000/api/inquiries', {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+      const response = await axios.get(`${API_URL}/inquiries`, {
         headers: {
           'x-admin-username': username,
           'x-admin-password': password
